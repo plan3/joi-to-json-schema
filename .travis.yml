@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - 8
-  - 6
+- 8
+- 6
+deploy:
+  provider: npm
+  email: billing.relate@schibsted.media
+  on:
+    branch: master
+    node: 8
+  api_key:
+    secure: nrR3rVF2AUCMxb5TWXNN/SUClQ5Dkef6ieZTN/pXt3U32e61W+7r1DimV3Runy53LDqpHd1uVDc4ikXpHFRbzxOm652rZT1J7FA2raj3LiEInuvbkzUdkkHAchYctX7/LDorcmhD7we4ZEKLY6LLgBWs6jLlECt0ZJZ+7Bwl1kE/a2p08yFJAgwCk7jPtNUXbU42MFOOrOfyudBa9TUVzbsBnNEHHjJCvEqN+1H8UCKNwxp1AxwMUvKnpibALb2MoF9zvHPLa0UPSxF4QN8T/oTvDiHUBtEMPPl+Xg3CTkCwW+jLVJHC95epQLyiVnQdMseg9h5XVl8/edrWGAUAusj/mxfxFsoxBYNpRPlQ6AG/IEpTlpLNYOOjkfXFubW1zFX0/16hri+RcTKI21UbqR2OZhxmbBc29dZ9UyINc/yy+e9U8kfno1/Z8E3kDlPg0tSkkmFpRxucTQ5XvWIiL/OSzP5VzV2aN685sifq5tkOD7JQ2o3zNPMGs/AA9+mlJDt/PWzyTt4CCO+bn7iBYyUT/Yx4IT71xHERToELv4HHizk5qPo23hqIYHlK5E6kzl1S0LtUHhWAvt4iKYYlTtXezDgHyC0fP/uie4KGobU5h8SFkddFwV6Zhoa1PEpVh82jT2lSmR1rJcy7E8CA+ZGaFLMoQuCWHmvhxaYj23g=

@@ -1,29 +1,26 @@
 # joi-to-json-schema
 
+**NOTE:** This is the fork of https://github.com/lightsofapollo/joi-to-json-schema
+
 The goal is to provide best effort conversion from Joi objects to JSON
 Schema (draft-04) with the understanding that only some of Joi's schematics 
 can be converted directly. Primarily this module exists to convert Joi schema 
 objects for existing tools which happen to currently consume JSON Schema.
 
-[![npm version](https://badge.fury.io/js/joi-to-json-schema.svg)](http://badge.fury.io/js/joi-to-json-schema)
-[![Build Status](https://travis-ci.org/lightsofapollo/joi-to-json-schema.svg?branch=master)](https://travis-ci.org/lightsofapollo/joi-to-json-schema)
-[![Dependencies Status](https://david-dm.org/lightsofapollo/joi-to-json-schema.svg)](https://david-dm.org/lightsofapollo/joi-to-json-schema)
-[![DevDependencies Status](https://david-dm.org/lightsofapollo/joi-to-json-schema/dev-status.svg)](https://david-dm.org/lightsofapollo/joi-to-json-schema#info=devDependencies)
-
-[![NPM](https://nodei.co/npm/joi-to-json-schema.png)](https://nodei.co/npm/joi-to-json-schema/)
-[![NPM](https://nodei.co/npm-dl/joi-to-json-schema.png)](https://nodei.co/npm-dl/joi-to-json-schema/)
+[![npm version](https://badge.fury.io/js/%40plan3-relate%2Fhapi-cls.svg)](https://badge.fury.io/js/%40plan3-relate%2Fhapi-cls)
+[![Build Status](https://travis-ci.org/plan3/joi-to-json-schema.svg?branch=master)](https://travis-ci.org/plan3/joi-to-json-schema)
+[![Dependencies Status](https://david-dm.org/plan3/joi-to-json-schema.svg)](https://david-dm.org/plan3/joi-to-json-schema)
+[![DevDependencies Status](https://david-dm.org/plan3/joi-to-json-schema/dev-status.svg)](https://david-dm.org/plan3/joi-to-json-schema#info=devDependencies)
 
 
 ## Installation
-> npm install joi-to-json-schema
-
-
+> npm install @plan3-relate/joi-to-json-schema
 
 ## Usage
 
 ```js
-var joi = require('joi'),
-    convert = require('joi-to-json-schema'),
+const joi = require('joi'),
+    convert = require('@plan3-relate/joi-to-json-schema'),
     joiSchema = joi.object({
       'name': joi.string().required().regex(/^\w+$/),
       'description': joi.string().optional().default('no description provided'),
@@ -62,9 +59,9 @@ which will produce:
   * @param {TransformFunction} [transformer=null]
   * @returns {JSONSchema}
   */
- export default function convert(joi,transformer=null) {
+ function convert(joi,transformer=null) {
    // ...
- };
+ }
 
  /**
   * Joi Validation Object
@@ -101,7 +98,7 @@ Kris Zyp's excellent [json-schema](https://github.com/kriszyp/json-schema)
 
 ## LICENSE
 
-Copyright 2014, Mozilla Foundation
+Copyright 2014, Mozilla Foundation & Plan3
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -1,5 +1,5 @@
 {
-  "name": "joi-to-json-schema",
+  "name": "@plan3-relate/joi-to-json-schema",
   "version": "3.0.0",
   "description": "Joi -> JSON Schema Converter",
   "main": "src/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lightsofapollo/joi-to-json-schema.git"
+    "url": "https://github.com/plan3/joi-to-json-schema.git"
   },
   "keywords": [
     "joi",
@@ -16,15 +16,15 @@
     "json",
     "schema"
   ],
-  "author": "James Lal [:lightsofapollo]",
-  "maintainers": [
+  "authors": [
+    "James Lal [:lightsofapollo]",
     "Rob Raisch [:raisch]"
   ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/lightsofapollo/joi-to-json-schema/issues"
+    "url": "https://github.com/plan3/joi-to-json-schema/issues"
   },
-  "homepage": "https://github.com/lightsofapollo/joi-to-json-schema",
+  "homepage": "https://github.com/plan3/joi-to-json-schema",
   "peerDependencies": {
     "joi": "^10.6.0"
   },
