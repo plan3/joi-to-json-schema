@@ -1,4 +1,4 @@
-import assert from 'assert';
+const assert = require('assert');
 
 // Converter helpers for Joi types.
 
@@ -6,7 +6,7 @@ let TYPES = {
 
   alternatives: (schema, joi) => {
 
-    var result = schema.oneOf = [];
+    const result = schema.oneOf = [];
 
     joi._inner.matches.forEach(function (match) {
 
@@ -185,7 +185,7 @@ let TYPES = {
  * @param {TransformFunction} [transformer=null]
  * @returns {JSONSchema}
  */
-export default function convert(joi,transformer=null) {
+function convert(joi,transformer=null) {
 
   assert('object'===typeof joi && true === joi.isJoi, 'requires a joi schema object');
 
@@ -243,7 +243,7 @@ export default function convert(joi,transformer=null) {
   return result;
 }
 
-module.exports = convert
+module.exports = convert;
 
 /**
  * Joi Validation Object
