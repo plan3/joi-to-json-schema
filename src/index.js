@@ -1,11 +1,8 @@
 const assert = require('assert');
 
 // Converter helpers for Joi types.
-
-let TYPES = {
-
+const TYPES = {
   alternatives: (schema, joi) => {
-
     const result = schema.oneOf = [];
 
     joi._inner.matches.forEach(function (match) {
@@ -131,7 +128,7 @@ let TYPES = {
           schema.format = 'email';
           break;
         case 'regex':
-          schema.pattern = String(test.arg).replace(/^\//,'').replace(/\/$/,'');
+          schema.pattern = String(test.arg.pattern).replace(/^\//,'').replace(/\/$/,'');
           break;
         case 'min':
           schema.minLength = test.arg;
@@ -235,7 +232,6 @@ function convert(joi,transformer=null) {
   }
 
   let result = TYPES[joi._type](schema, joi);
-
   if(transformer){
     result = transformer(result);
   }

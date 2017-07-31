@@ -8,7 +8,7 @@
 /* global suite, test */
 
 //@formatter:off
-var Joi         = require('joi'),
+const Joi         = require('joi'),
     convert     = require('../src/index'),
     assert      = require('assert'),
     jsonSchema  = require('json-schema'),
@@ -21,7 +21,7 @@ var Joi         = require('joi'),
  * @param {object} expected
  */
 assert.validate = function (schema, expected) {
-  var result = jsonSchema.validate(schema);
+  const result = jsonSchema.validate(schema);
   assert.deepEqual(schema, expected);
   if ('object' === typeof result && Array.isArray(result.errors) && 0 === result.errors.length) {
     return;
@@ -34,12 +34,12 @@ assert.validate = function (schema, expected) {
  * @param {object} obj - transformable object
  * @returns {*}
  */
-var removeNullsFromArrays = function (obj) {
-  var result;
-  if (_.isArray(obj)) {
+const removeNullsFromArrays = function (obj) {
+  let result;
+  if (Array.isArray(obj)) {
     result = [];
-    for (var i = 0, len = obj.length; i < len; i++) {
-      var val = obj[i];
+    for (let i = 0, len = obj.length; i < len; i++) {
+      const val = obj[i];
       if (null !== val) {
         result.push(removeNullsFromArrays(val));
       }
@@ -48,7 +48,7 @@ var removeNullsFromArrays = function (obj) {
   }
   else if (_.isObject(obj)) {
     result = {};
-    _.keys(obj).forEach(function (key) {
+    Object.keys(obj).forEach(function (key) {
       result[key] = removeNullsFromArrays(obj[key]);
     });
     return result;
@@ -61,7 +61,7 @@ var removeNullsFromArrays = function (obj) {
 suite('transform', function () {
 
   test('object defaults', function () {
-    var joi = Joi.object(),
+    const joi = Joi.object(),
         transformer = function (obj) {
           obj.additionalProperties = true;
           return obj;
@@ -78,7 +78,7 @@ suite('transform', function () {
 
   test('complicated', function () {
 
-    var joi = Joi.object({
+    const joi = Joi.object({
           name: Joi.string().required(),
           options: Joi.alternatives()
               .when('name', {

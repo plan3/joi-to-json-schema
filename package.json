@@ -20,13 +20,16 @@
   "maintainers": [
     "Rob Raisch [:raisch]"
   ],
-  "license": "Apache2",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/lightsofapollo/joi-to-json-schema/issues"
   },
   "homepage": "https://github.com/lightsofapollo/joi-to-json-schema",
+  "peerDependencies": {
+    "joi": "^10.6.0"
+  },
   "devDependencies": {
-    "joi": "^6.10.1",
+    "joi": "10.6.0",
     "json-schema": "^0.2.2",
     "lodash": "^3.10.1",
     "mocha": "^2.5.3"
